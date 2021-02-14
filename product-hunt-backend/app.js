@@ -15,7 +15,7 @@ const auth = require('./modules/config');
 
 //connecting to MongoDB
 
-mongoose.connect('mongodb://localhost/productHunt',{useNewUrlParser:true,useUnifiedTopology:true},
+mongoose.connect(process.env.MONGODB_URL,{useNewUrlParser:true,useUnifiedTopology:true},
 err => {
   console.log(err ? err : 'database connected')
 })
