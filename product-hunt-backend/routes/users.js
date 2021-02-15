@@ -18,7 +18,7 @@ router.post('/', async (req,res,next)=> {
   try {
     let user = await User.create(req.body.user);
     let createdToken = await token.generateJwt(user);
-    nodemailer(user)
+    // nodemailer(user)
     res.status(201).json({user:{... userInfo(user), createdToken}});
   } catch (error) {
     next(error);
@@ -33,7 +33,7 @@ router.post("/login", async(req,res,next)=> {
     let result = await compare(password,user.password);
     if(user && result) {
       let createdToken = await token.generateJwt(user);
-      nodemailer(user)
+      // nodemailer(user)
       res.json({user:{... userInfo(user), createdToken}});
     }
   } catch (error) {

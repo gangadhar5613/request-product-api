@@ -34,10 +34,10 @@ router.post("/",auth.verifyToken,upload.single('ideathon'), async (req,res,next)
         // cloudinary sending application
         req.body.ideathon = req.body.filename
 
-       await cloudinaryUpload(req,res)
-       console.log(res.image)
+    //    await cloudinaryUpload(req,res)
+    //    console.log(res.image)
 
-       req.body.product.images = res.image.secure_url
+    //    req.body.product.images = res.image.secure_url
         let createdProduct = await Product.create(req.body.product);
         res.json({products: productData(createdProduct,authorDetail)});
     } catch (error) {

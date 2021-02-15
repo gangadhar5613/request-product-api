@@ -10,7 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require("./routes/product");
 var profileRouter = require("./routes/profile");
-
+require('dotenv').config();
 const auth = require('./modules/config');
 
 //connecting to MongoDB
@@ -24,7 +24,7 @@ var app = express();
 
 //dotenv
 
-require('dotenv').config();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
